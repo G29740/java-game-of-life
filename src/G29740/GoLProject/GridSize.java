@@ -27,9 +27,9 @@ public class GridSize extends javax.swing.JDialog {
      */
     public GridSize(Frame parent, boolean modal) {
         super(parent, modal);
+        golMain = (GoLMain) parent;
         initComponents();
         setLocationRelativeTo(null);
-        golMain = (GoLMain) parent;
     }
 
     /** This method is called from within the constructor to
@@ -58,7 +58,7 @@ public class GridSize extends javax.swing.JDialog {
         rowSlider.setPaintLabels(true);
         rowSlider.setPaintTicks(true);
         rowSlider.setSnapToTicks(true);
-        rowSlider.setValue(25);
+        rowSlider.setValue(golMain.getGolGrid().getRowCount());
         rowSlider.setBorder(BorderFactory.createTitledBorder("Rows"));
 
         columnSlider.setMajorTickSpacing(10);
@@ -68,7 +68,7 @@ public class GridSize extends javax.swing.JDialog {
         columnSlider.setPaintLabels(true);
         columnSlider.setPaintTicks(true);
         columnSlider.setSnapToTicks(true);
-        columnSlider.setValue(40);
+        columnSlider.setValue(golMain.getGolGrid().getColumnCount());
         columnSlider.setBorder(BorderFactory.createTitledBorder("Columns"));
 
         GroupLayout layout = new GroupLayout(getContentPane());
